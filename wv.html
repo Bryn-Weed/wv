@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Wild & Wonderful</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+  <style>
+  body {
+      font: 400 15px/1.8 Lato, sans-serif;
+      color: #fff;
+      background-color: #FF495C;
+  }
+
+  h1 {
+    font-family: Lato, sans-serif;
+    font-size: 45px;
+    color: #FFF;
+  letter-spacing: 2px;  }
+
+  h2 {
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    color: white;
+    text-decoration: underline;
+  }
+
+  h3, h4 {
+    font-family: 'Dancing Script', cursive;
+    text-shadow: 2px 2px 0 black;
+      margin: 10px 0 30px 0;
+      letter-spacing: 2px;
+      font-size: 60px;
+      color: white;
+
+  }
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  .carousel-inner img {
+      -webkit-filter: grayscale(0%);
+      filter: grayscale(0%); /* make all photos black and white */
+      width: 100%; /* Set width to 100% */
+      margin: auto;
+  }
+
+  .carousel-caption{
+    top: 50%;
+ transform: translateY(-50%);
+ bottom: initial;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+  .bg-1 {
+      background: #FF495C;
+      color: #bdbdbd;
+  }
+  .bg-1 h3 {color: #fff;}
+  .bg-1 p {}
+  .list-group-item:first-child {
+      border-top-right-radius: 0;
+      border-top-left-radius: 0;
+  }
+  .list-group-item:last-child {
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 0;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail p {
+      margin-top: 15px;
+      color: #555;
+  }
+  .btn {
+      padding: 10px 20px;
+      background-color: #333;
+      color: #f1f1f1;
+      border-radius: 0;
+      transition: .2s;
+  }
+  .btn:hover, .btn:focus {
+      border: 1px solid #333;
+      background-color: #fff;
+      color: #000;
+  }
+
+  .btn-primary {
+    transition: 300ms;
+    background-color: transparent;
+    border-color: orange;
+    border-radius: 300px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 20px;
+    color: white;
+  }
+
+.btn-primary:after  {
+  content: '';
+    width: 0px;
+    height: 1px;
+
+
+    transition: 300ms;}
+
+    .btn-primary:hover:after{
+      width: 100%;
+
+    }
+
+  .btn-primary:hover {
+  background-color: transparent !important;
+color: white;
+border: none;}
+
+
+  .modal-header, h4, .close {
+      background-color: #333;
+      color: #fff !important;
+      text-align: center;
+      font-size: 30px;
+  }
+  .modal-header, .modal-body {
+      padding: 40px 50px;
+  }
+  .nav-tabs li a {
+      color: #777;
+  }
+
+  hr {
+  max-width: 900px;
+border-width: 2px;
+border-color: white;
+}
+
+  #googleMap {
+      width: 100%;
+      height: 400px;
+      -webkit-filter: grayscale(100%);
+      filter: grayscale(100%);
+  }
+
+  hr.long {
+    max-width: 100% !important;
+    border-width: 1px;
+    border-color: grey !important;
+  }
+  .navbar {
+      font-family: Montserrat, sans-serif;
+      margin-bottom: 0;
+ 	background-color: transparent;
+      border: 0;
+      font-size: 11px !important;
+      letter-spacing: 4px;
+
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #F1f1f1 !important;
+      font-size: 15px;
+      font-weight: bold;
+
+  }
+
+  .navbar-nav li a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.navbar-nav li a:hover:before {
+  visibility: visible;
+ -webkit-transform: scaleX(1);
+ transform: scaleX(1);
+}
+
+
+  .navbar-nav li a:hover {
+      color: #fff !important;
+      background-color: transparent !important;
+
+  }
+  .navbar-nav li.active a {
+      color: #fff !important;
+      background-color: transparent !important;
+      }
+
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+  }
+
+  .navbar-brand{
+    font-weight: bold;
+  }
+  .open .dropdown-toggle {
+      color: #fff;
+      background-color: #555 !important;
+  }
+  .dropdown-menu li a {
+      color: #000 !important;
+  }
+  .dropdown-menu li a:hover {
+      background-color: red !important;
+  }
+  footer {
+      background-color: #2d2d30;
+      color: #f5f5f5;
+      padding: 32px;
+  }
+  footer a {
+      color: #f5f5f5;
+  }
+  footer a:hover {
+      color: #777;
+      text-decoration: none;
+  }
+  .form-control {
+      border-radius: 0;
+  }
+  textarea {
+      resize: none;
+  }
+
+  a.chevron {
+    font-size: 20px;
+    color: white;
+  }
+
+  h1.titlepage {
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px;
+    font-weight: bold;
+    text-shadow: 2px 2px 0 black;
+  }
+  #about {
+  text-align: center;
+position: relative;}
+
+  video {
+    width: 100%;
+    position: relative;
+  }
+
+p {
+color: #F1EBF5;}
+  p.fontup {
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+  }
+
+  .videocontent {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    z-index: +1;
+  text-align: center;
+width: 45%;}
+
+  .videocontent h3{
+    font-size: 60px;
+    text-shadow: 2px 2px 0 black;
+    font-weight: bold;
+  }
+
+  .videocontent p{
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 black;
+  }
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#myPage"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#myPage">HOME</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#landmarks">LANDMARKS</a></li>
+        <li><a href="#activities">ACTIVITIES</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+    <!-- Indicators -->
+
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img src="./wv.jpg" alt="West Virginia" width="100%" height="700">
+        <div class="carousel-caption">
+          <h1 class="titlepage">Wild & Wonderful</h1>
+          <br><Br>
+          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Discover West Virginia</a><br>
+          <a href="#about" class="chevron"><span class="glyphicon glyphicon-chevron-down"></span></a>
+        </div>
+      </div>
+
+
+
+
+    </div>
+
+</div>
+
+<!-- Container (The Band Section) -->
+<div id="about" class="">
+  <video autoplay muted loop>
+    <source src="movie.mp4" type="video/mp4">
+    </video>
+    <div class="videocontent">
+  <h3> - Almost Heaven -</h3>
+  <hr>
+  <p>From quiet, scenic retreats to breathtaking landscapes, West Virginia is the home of adventure. </p><br>
+  <p>A magical place with so much to offer. One trip, and you'll see why they call it Almost Heaven.</p>
+  <a class="btn btn-primary btn-xl js-scroll-trigger" href="#landmarks">Find Out More</a><br>
+  <a href="#landmarks" class="chevron"><span class="glyphicon glyphicon-chevron-down"></span></a>
+
+</div>
+
+
+
+
+  </div>
+
+
+
+<!-- Container (TOUR Section) -->
+<div id="landmarks" class="bg-1">
+  <div class="container">
+
+    <h3 class="text-center">Landmarks</h3>
+
+<section class="features-icons bg-light text-center">
+
+        <div class="row">
+          <div class="col-lg-4">
+
+
+              <img src="river.jpg" alt="river" width="300" height="182"></img>
+
+              <h2>New River Gorge</h2>
+              <p>Among the oldest rivers on the continent, the New River Gorge is a perfect path through land rich in history, and offers many recreational activities.</p>
+
+          </div>
+          <div class="col-lg-4">
+
+
+                <img src="greenbrier.jpg" alt="Greenbrier" width="300" height="182"></img>
+
+                <h2>The Greenbrier</h2>
+                <p>Located amid the awe-inspiring mountains of West Virginia, The Greenbrier is a historic landmark. This world-class resort has housed 27 former Presidents.</p>
+
+          </div>
+          <div class="col-lg-4">
+
+
+                <img src="asylum.jpg" alt="Asylum" width="300" height="182"></img>
+
+                <h2>Trans-Allegheny Lunatic Asylum</h2>
+                <p>This facility served as a sanctuary for the mentally ill from the mid-1800s. It holds fascinating stories of determinded individuals and their questionable methods.</p>
+
+          </div>
+
+
+</div>
+
+<div class="row">
+
+
+
+              <div class="col-lg-4">
+
+
+                    <img src="prison.jpg" alt="Prison" width="300" height="182"></img>
+
+                    <h2>West Virginia Penitentiary</h2>
+                    <p>Home to many reported paranormal events, this striking, castle-like prison tells the tale of a violent past ridden with riots and executions.</p>
+
+                </div>
+
+              <div class="col-lg-4">
+
+
+                <img src="culture.jpg" alt="Culture" width="300" height="182"></img>
+
+                  <h2>Culture Center</h2>
+                  <p>The Culture Center is home to the State Museum and Archives Library, two buildings dedicated to preserving the culture and history of West Virginia.</p>
+
+              </div>
+
+              <div class="col-lg-4">
+
+
+                    <img src="harpers.jpg" alt="Harpers Ferry" width="300" height="182"></img>
+
+                    <h2>Harpers Ferry National Park</h2>
+                    <p>At the confluence of the Potomac and Shenandoah rivers, this park is home to a historic community, containing museums, trails, battlefields and more.</p>
+
+              </div>
+
+            </div>
+
+</div>
+
+
+
+        </section>
+
+
+
+
+</div>
+
+
+<div id="activities" class="bg-1">
+  <div class="container">
+<h3 class="text-center">Activities</h3>
+<p class="text-center">There's plenty more to do here.</p><br><br>
+<section class="features-icons bg-light text-center">
+
+        <div class="row">
+          <div class="col-lg-4">
+
+
+              <img src="cabin.jpg" alt="cabin" width="300" height="182"></img>
+
+              <h2>Log Cabins</h2>
+              <p>What better way to enjoy the awe-inspiring scenery than to become a part of it?</p>
+
+          </div>
+          <div class="col-lg-4">
+
+
+                <img src="hiking.jpg" alt="Hiking" width="300" height="182"></img>
+
+                <h2>Hiking</h2>
+                <p>Witness first-hand why West Virginia is known as "Wild and Wonderful".</p>
+
+          </div>
+          <div class="col-lg-4">
+
+
+                <img src="festival.jpg" alt="festival" width="300" height="182"></img>
+
+                <h2>Festivals</h2>
+                <p>Enjoy the festivities! We have plenty of reasons to celebrate, and so do you!</p>
+
+          </div>
+
+
+</div>
+
+<div class="row">
+
+
+
+              <div class="col-lg-4">
+
+
+                    <img src="rafting.jpg" alt="rafting" width="300" height="182"></img>
+
+                    <h2>Rafting</h2>
+                    <p>There's plenty of different ways to explore these wilds.</p>
+
+                </div>
+
+              <div class="col-lg-4">
+
+
+                <img src="fishing.jpg" alt="fishing" width="300" height="182"></img>
+
+                  <h2>Fishing</h2>
+                  <p>Take a break and relax. </p>
+
+              </div>
+
+              <div class="col-lg-4">
+
+
+                    <img src="market.jpg" alt="Market" width="300" height="182"></img>
+
+                    <h2>Farmer's Markets</h2>
+                    <p>Lively, bustling, and a source of good produce.</p>
+
+              </div>
+
+            </div>
+
+</div>
+
+
+
+        </section>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- Image of location/map -->
+
+
+<!-- Footer -->
+<footer class="text-center">
+  <a class="up-arrow" href="#myPage" data-toggle="tooltip" title="TO TOP">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a><br><br>
+  <p class="fontup">Almost Heaven</a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Initialize Tooltip
+  $('[data-toggle="tooltip"]').tooltip();
+
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, #myCarousel a, #about a, footer a[href='#myPage']").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+})
+</script>
+
+</body>
+</html>
